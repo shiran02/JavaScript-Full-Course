@@ -14,6 +14,33 @@ if(playGame){
         playerChoice === "scissor" 
         ){
 
+            let computerChoice = Math.floor(Math.random() * 3 + 1);
+            let compuer = computerChoice === 1
+                ? "rock"
+                : computerChoice ===2
+                ? "paper"
+                : "scissor";
+
+            let result =
+                playerOne === computer
+                    ? "Tie game !"
+                    :playerOne === "rock" && compuer === "paper"
+                    ? 'playerOne:  ${playerOne}\nComputer: ${computer} \nCkmputer wins'
+                    :playerOne === "paper" && compuer === "scissor"
+                    ? 'playerOne:  ${playerOne}\nComputer: ${computer} \nCkmputer wins'
+                    :playerOne === "scissor" && compuer === "rock"
+                    ? 'playerOne:  ${playerOne}\nComputer: ${computer} \nCkmputer wins'
+                    :'playerOne:  ${playerOne}\nComputer: ${computer} \nCkmputer wins'
+
+            alert(result);
+            let playAgain = confirm("Play Again?");
+            playAgain ? location.reload() : alert("Ok thanks for playing");
+
+ 
+                    
+
+
+
         }else{
             alert("i guess change your mind. may be next time");
         }
